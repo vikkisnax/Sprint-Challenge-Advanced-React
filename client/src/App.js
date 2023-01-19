@@ -1,26 +1,42 @@
 import React from 'react';
-import logo from './logo.svg';
+import Card from './components/Card';
 import './App.css';
+import data from './data';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import NavBar from './components/NavBar';
+
+
+//class component - why is this red?
+class App extends React.Component {
+
+  //state
+  constructor(){
+    super();
+    this.state = {
+      // women: [{name: 'v'}], //test
+      women: [],
+    };
+  }
+
+  //put data into state
+  componentDidMount(){
+    this.setState({women: data.data})
+  }
+
+
+  render(){
+    return (
+      <div className="App">
+        {/* <NavBar /> */}
+        <div className="nameList">
+          <Card 
+            data={data.data} 
+            // search={this.state.searchUser}
+          />
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
