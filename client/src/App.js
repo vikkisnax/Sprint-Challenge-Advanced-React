@@ -13,21 +13,25 @@ class App extends React.Component {
   constructor(){
     super();
     this.state = {
-      // women: [{name: 'v'}], //test
-      women: [],
+        // women: [{name: 'v'}], //test
+        women: [],
+        darkMode: false
     };
   }
 
   //put data into state
   componentDidMount(){
     this.setState({women: data.data})
+    console.log("App: Mounted");
   }
-
 
   render(){
     return (
       <div className="App">
-        {/* <NavBar /> */}
+        <h1>APP: Women's World Cup players</h1>
+    
+          <NavBar />
+       
         <div className="nameList">
           <Card 
             data={data.data} 

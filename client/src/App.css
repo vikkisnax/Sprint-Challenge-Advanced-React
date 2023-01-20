@@ -32,11 +32,14 @@
   }
 }
 
-.dark-mode {
+.dark {
+  background-color: #333;
   color: #fff;
-  background-color: #313843;
-}
-
+  }
+.light {
+  background-color: #fff;
+  color: #333;
+  }
 .navbar {
   background-color: #1f2022;
   border: none;
