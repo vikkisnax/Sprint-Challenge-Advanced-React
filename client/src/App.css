@@ -31,3 +31,18 @@
     transform: rotate(360deg);
   }
 }
+
+.dark {
+  background-color: #333;
+  color: #fff;
+  }
+.light {
+  background-color: #fff;
+  color: #333;
+  }
+.navbar {
+  background-color: #1f2022;
+  border: none;
+}
+
+  

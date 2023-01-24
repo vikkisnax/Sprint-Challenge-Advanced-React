@@ -1,26 +1,42 @@
 import React from 'react';
-import logo from './logo.svg';
+import Card from './components/Card';
 import './App.css';
+import data from './data';
+import NavBar from './components/NavBar';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+//can't use hooks 
+class App extends React.Component {
+
+  //state
+  constructor(){
+    super();
+    this.state = {
+        women: [],
+    };
+  }
+
+  //put data into state
+  componentDidMount(){
+    this.setState({women: data.data})
+    console.log("App: Mounted - data");
+  }
+
+  render(){
+    return (
+      <div className="App">
+        <h1>APP: Women's World Cup players</h1>
+    
+          <NavBar />
+       
+        <div className="nameList">
+          <Card 
+            data={data.data} 
+          />
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
